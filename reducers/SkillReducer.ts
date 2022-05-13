@@ -10,7 +10,7 @@ const SkillSlice = createSlice({
     getSkills(state, data) {
       state = [...data.payload];
       return state;
-    },
+    }
   },
 });
 export const SkillActions = SkillSlice.actions;

@@ -4,8 +4,11 @@ import { useSelector } from "react-redux";
 import Layout from "../../components/layout/Layout";
 import { Project } from "../../Model/project";
 import style from "./projectDetails.module.scss";
+import SkillList from "../../components/Skill/Skill-list";
 
 const ProjectDetails = () => {
+  console.log("Project details");
+  
   const route = useRouter();
   const { id } = route.query;
   const project: Project[] = useSelector((state: any) => state.project);
@@ -24,8 +27,22 @@ const ProjectDetails = () => {
   }
   return (
     <div className={style["project-details"]}>
-      <h1>{selectedProject.title}</h1>
-      <h2>{id}</h2>
+      <section className={style["project-details__info"]}>
+        <h2 className={style["project-details__info--title"]}>{selectedProject?.title}</h2>
+        <p>{selectedProject.details}</p>
+          {selectedProject?.skills.length && (
+              <div className={style["project-details__info--skills"]}>
+                  <h4>Technology used:</h4>
+                  <SkillList skills={selectedProject.skills}/>
+              </div>
+          )}
+      </section>
+      <section className={style["project-details__image"]}>
+        {selectedProject?.photos.length && 
+        <>
+        {selectedProject.photos.map(item => <img key={item.id} src={item.url}/>)}
+        </>}
+      </section>
     </div>
   );
 };

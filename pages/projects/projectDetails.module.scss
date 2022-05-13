@@ -3,8 +3,48 @@
   margin-top: 8.5rem;
   border: 1px solid red;
   display: flex;
-  align-items: center;
   justify-content: center;
+  //align-items: center;
+
+  &__info {
+    width: 50%;
+    height: 100%;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &--title {
+      font-size: 4rem;
+      margin: 15px 0px;
+    }
+    p {
+      font-size: 1.5rem;
+      text-align: justify;
+      color: #333333;
+      margin: 15px 0px;
+    }
+
+    &--skills {
+      h4 {
+        font-size: 2rem;
+      }
+    }
+
+  }
+
+  &__image{
+    width: 50%;
+    height: 100%;
+    padding: 1rem;
+    border: 1px solid deeppink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 20rem
+    }
+  }
 }
 
 .project-not-found {

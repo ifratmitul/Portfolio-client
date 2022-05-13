@@ -1,0 +1,100 @@
+.admin {
+  &__skill-card {
+    display: flex;
+    align-items: center;
+    
+    &--picture {
+        margin: 2rem;
+      img {
+        height: 5rem;
+        width: 5rem;
+      }
+    }
+
+    &--info {
+        height: 5rem;
+        width: 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            font-size: 14px;
+            padding: 0 2rem;
+            font-weight: 700;
+        }
+    }
+  }
+
+  &__skill-list {
+    li::marker {
+        font-size: 20px;
+    }
+  }
+
+}
+
+.skill-control-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.education-control-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+  }
+}
+
+
+.education-list {
+  &__item {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 30rem;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      margin: 10px;
+    }
+  }
+}
+
+
+.experience-control-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+  }
+}
+
+
+.experience-list {
+  &__item {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 30rem;
+    margin: 2rem 0;
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
+    button {
+      margin: 10px;
+    }
+  }
+}

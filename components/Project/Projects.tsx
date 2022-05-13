@@ -1,9 +1,7 @@
-import Link from "next/link";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { FetchProjects } from "../../actions/ProjectAction";
+import { useSelector } from "react-redux";
 import { Project } from "../../Model/project";
 import Layout from "../layout/Layout";
+import FeaturedProject from "./FeaturedProject";
 import ProjectCard from "./ProjectCard";
 import style from "./projects.module.scss";
 interface Props {
@@ -11,11 +9,21 @@ interface Props {
 }
 
 function Projects({ providedIn }: Props) {
+  console.log("Hero Projects");
+  
   const projects: Project[] = useSelector((state: any) => state.project);
   const topProjects: Project[] =
-    projects?.length > 3 ? projects.slice(0, 3) : projects;
+    projects?.length > 1 ? projects.slice(0, 1) : projects;
   const projectToShow: Project[] =
     providedIn === "MAIN" ? topProjects : projects;
+
+  if( providedIn === "MAIN") {
+    return (
+    <>
+     <FeaturedProject project={projectToShow[0]}/>
+    
+    </>)
+  }
 
   return (
     <section
@@ -23,18 +31,6 @@ function Projects({ providedIn }: Props) {
       className={style["project"]}
       id="project"
     >
-      {providedIn === "MAIN" ? (
-        <section className={style["project__text-box"]}>
-          <h1 className="heading-primary--sub">Projects</h1>
-          <p>
-            These are few of my top projects. See more of my projects
-            <Link href="/projects">
-              <a> here </a>
-            </Link>
-          </p>
-        </section>
-      ) : null}
-
       <section className={style["project__list"]}>
         {projectToShow?.length > 0 &&
           projectToShow.map((item: Project) => (

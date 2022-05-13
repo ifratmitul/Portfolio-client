@@ -13,7 +13,6 @@ export const dateFormatter = (date: Date): string => {
       "November",
       "December",
     ];
-  
     let month: string = months[date.getMonth()];
     let year: string = date.getFullYear().toString();
     let res: string = month + " " + year;

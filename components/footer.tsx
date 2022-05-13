@@ -15,10 +15,14 @@ function Footer() {
         <h2>Find me in</h2>
         <ul>
           <li>
-            <a target="_blank">Linkedin</a>
+            <a target="_blank" href="https://www.linkedin.com/in/iifrat-mitul/">
+              Linkedin
+            </a>
           </li>
           <li>
-            <a target="_blank">Github</a>
+            <a target="_blank" href="https://github.com/ifratmitul">
+              Github
+            </a>
           </li>
           <li>
             <Link href="/">

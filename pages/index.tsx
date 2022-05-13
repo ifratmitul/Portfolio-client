@@ -16,7 +16,7 @@ const Home = () => {
     dispatch(fetchExperienceData());
     dispatch(fetchSkills());
     return () => { };
-  }, [dispatch]);
+  }, []);
   return (
     <>
       <LandingPage />
